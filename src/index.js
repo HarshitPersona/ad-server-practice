@@ -13,7 +13,7 @@ const port = process.env.PORT
 app.listen(port, () => {
     console.log("Server is up on " + port)
 })
-// const auth = require("./middleware/auth")
+// const authPublisher = require("./middleware/auth")
 
 // const { generateAuthToken, generateApiKey, generatePublisherId } = require("./utils/unique-ids")
 
@@ -26,7 +26,7 @@ app.listen(port, () => {
 
 
 
-// app.get("/api/ad", auth, (req, res) => {
+// app.get("/api/ad", authPublisher, (req, res) => {
 //   res.send(creative);
 // });
 

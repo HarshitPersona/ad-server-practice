@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const Publisher = require('../models/publisher');
 // const { roles } = require('../utils/roles')
 
-const auth = async (req, res, next) => {
+const authPublisher = async (req, res, next) => {
     try {
         // const token = req.cookies['auth_token']
         // const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
@@ -28,4 +28,20 @@ const auth = async (req, res, next) => {
     }
 }
 
-module.exports = auth
+// const authAsset = async (req, res, next) => {
+//     try {
+//         const token = req.cookies['auth_asset_token'] || "DummyToken"
+//         const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+//         await req.publisher.populate(assets)
+//         req.publisher.assets.find((asset)=> {
+//             return asset._id.equals(decoded)
+//         })
+//         req.publisher = publisher
+//         next();
+//     } catch (e) {
+//         res.status(401).send({ error: 'Please authenticate!' });
+//     }
+// }
+
+
+module.exports = authPublisher

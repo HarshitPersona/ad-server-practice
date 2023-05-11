@@ -10,6 +10,10 @@ const assetSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
+    apiKey: {
+        type: String,
+        trim: true
+    },
     isDeleted: {
         type: Boolean,
         default: false
@@ -25,6 +29,12 @@ const assetSchema = new mongoose.Schema({
     },
 }, {
     timestamps: true
+},{ toJSON: { virtuals: true } })
+
+assetSchema.virtual('placements', {
+    ref: 'Placement',
+    localField: '_id',
+    foreignField: 'asset'
 })
 
 

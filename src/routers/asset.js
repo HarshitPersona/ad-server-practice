@@ -1,14 +1,14 @@
 const express = require('express')
 const Publisher = require('../models/publisher')
 const { generateApiKey } = require('../utils/unique-ids')
-const auth = require("../middleware/auth")
+const authPublisher = require("../middleware/auth")
 const Asset = require('../models/asset')
 
 const router = new express.Router()
 
 // these apis would be triggered from within the app
 
-router.post("/assets", auth, async (req,res) => {
+router.post("/assets", authPublisher, async (req,res) => {
     try{
         const asset = new Asset({
             name: req.body.name,

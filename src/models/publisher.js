@@ -20,9 +20,6 @@ const publisherSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
-    apiKey: {
-        type: String,
-    },
     tokens: [{
         token: {
             type: String,
@@ -47,9 +44,6 @@ publisherSchema.virtual('assets', {
     localField: '_id',
     foreignField: 'publisher'
 })
-
-publisherSchema.set('toObject', { virtuals: true })
-publisherSchema.set('toJSON', { virtuals: true })
 
 
 const Publisher = mongoose.model('Publisher', publisherSchema)

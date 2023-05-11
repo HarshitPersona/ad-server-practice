@@ -1,13 +1,13 @@
 const express = require('express')
 const Publisher = require('../models/publisher')
 const { generateApiKey } = require('../utils/unique-ids')
-const auth = require("../middleware/auth")
+const authPublisher = require("../middleware/auth")
 const Asset = require('../models/asset')
 
 const router = new express.Router()
 
 // generate api-key; this would be triggered by the publisher himself/herself
-router.patch("/publishers/api-key", auth, async (req,res) => {
+router.patch("/publishers/api-key", authPublisher, async (req,res) => {
     try{
         req.publisher.apiKey = generateApiKey()
         const updatedPublisher = await req.publisher.save()
@@ -28,10 +28,7 @@ router.post("/publishers/login", async (req,res) => {
             return (asset._id.equals(req.body.appId))
         })
 
-        console.log(asset)
-        
-        throw new Error()
-        res.send(publisher)
+        res.status(201).send(asset)
     }catch(e){
         res.status(401).send(e)
     }
