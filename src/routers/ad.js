@@ -5,9 +5,16 @@ const Ad = require("../models/ad");
 const router = new express.Router();
 
 const getRandomInteger = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  // Calculate the range of numbers
+  var range = max - min;
+
+  // Generate a random number within the range
+  var randomNum = Math.floor(Math.random() * range);
+
+  // Add the offset to get a number between m and n
+  var result = randomNum + min;
+
+  return result;
 };
 
 router.post("/ad", async (req, res) => {
