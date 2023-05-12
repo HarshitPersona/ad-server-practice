@@ -17,7 +17,7 @@ const getRandomInteger = (min, max) => {
   return result;
 };
 
-router.post("/ad", async (req, res) => {
+router.post("/ads", async (req, res) => {
   try {
     const ad = new Ad({
       format: "banner",
