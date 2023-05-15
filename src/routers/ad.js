@@ -48,9 +48,9 @@ router.get("/ads", async (req, res) => {
 router.get("/ad", async (req, res) => {
   try {
     const { format, dimensions } = req.query;
-    const { width, height } = dimensions;
+    const [width, height] = dimensions.split("x");
     const ads = await Ad.find({
-      format,
+      format: format.toLowerCase(),
       "dimensions.width": width,
       "dimensions.height": height,
     });

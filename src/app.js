@@ -16,11 +16,13 @@ const assetRouter = require("./routers/asset");
 const adRouter = require("./routers/ad");
 const eventTypeRouter = require("./routers/eventType");
 const eventRouter = require("./routers/eventType");
+const placementRouter = require("./routers/placement");
 
 app.use(apiRoute, publisherRouter);
 app.use(apiRoute, assetRouter);
 app.use(apiRoute, adRouter);
 app.use(apiRoute, eventTypeRouter);
 app.use(apiRoute, eventRouter);
+app.use(apiRoute, placementRouter);
 
 module.exports = app;
