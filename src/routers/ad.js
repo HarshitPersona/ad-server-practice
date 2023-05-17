@@ -24,7 +24,7 @@ router.post("/ads", async (req, res) => {
       title: req.body.title,
       description: req.body.description,
       ctaUrl: req.body.ctaUrl,
-      imageUrl: req.body.image_url,
+      imageUrl: req.body.imageUrl,
       dimensions: req.body.dimensions,
     });
 
