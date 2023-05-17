@@ -11,10 +11,10 @@ const adSchema = new mongoose.Schema(
     description: {
       type: String,
     },
-    url: {
+    ctaUrl: {
       type: String,
     },
-    image_url: {
+    imageUrl: {
       type: String,
     },
     dimensions: {

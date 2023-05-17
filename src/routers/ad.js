@@ -23,8 +23,8 @@ router.post("/ads", async (req, res) => {
       format: "banner",
       title: req.body.title,
       description: req.body.description,
-      url: req.body.url,
-      image_url: req.body.image_url,
+      ctaUrl: req.body.ctaUrl,
+      imageUrl: req.body.image_url,
       dimensions: req.body.dimensions,
     });
 
